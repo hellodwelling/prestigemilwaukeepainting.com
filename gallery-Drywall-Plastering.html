@@ -924,7 +924,7 @@
 <section class="overflow-hidden bg-white">
     <div class="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-24 lg:px-8">
         <h1>
-            <span class="block text-base font-semibold tracking-wide text-center uppercase text-secondary">Our Best Work</span>
+            <span class="block text-base font-semibold tracking-wide text-center uppercase text-secondary"> Our Best Work </span>
             <span class="block mt-2 text-3xl font-extrabold leading-8 tracking-tight text-center text-primary sm:text-4xl">Drywall &amp; Plastering</span>
         </h1>
         <div class="relative mt-12">
@@ -1120,7 +1120,7 @@
                     <div class="relative h-16 px-6 bg-white">
                         <h2 class="sr-only" :id="$id('modal-title')">Modal Gallery</h2>
 
-                        <button @click="galleryModalOpen = false;" class="absolute p-1 transition rounded top-5 right-1 hover:bg-gray-100 focus-visible:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2">
+                        <button id="close-modal-button" @click="galleryModalOpen = false; handleClick()" class="absolute p-1 transition rounded top-5 right-1 hover:bg-gray-100 focus-visible:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2">
                             <span class="sr-only">Close modal</span>
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -1222,6 +1222,14 @@
     </template>
 </div>
 
+<script>
+    function handleClick() {
+        const videos = document.getElementsByClassName('gallery-modal-video')
+        for (let video of videos) {
+            video.muted = true
+        }
+    }
+</script>
         </div>
     </div>
 </section>
@@ -1265,7 +1273,7 @@
               
               <p class="text-base text-gray-100">
                   Prestige Milwaukee<br/>
-                   
+                  
                       Milwaukee, WI <br/>
                   
                   +1 414-366-0839
@@ -1332,6 +1340,14 @@
                           
                           
                           
+                          
+                          <li>
+                              <a
+                                  href='sitemap.xml'
+                                  class="p-1 text-base text-gray-100 rounded hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-opacity-75"
+                                  >Sitemap</a
+                              >
+                          </li>
                           
                       </ul>
                   </div>
